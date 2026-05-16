@@ -1,18 +1,22 @@
 import { MdClose } from "react-icons/md";
 import css from "./Task.module.css";
 import { useDispatch } from "react-redux";
-import { changeTodo, removeTodo } from "redux/todos/todosSlice";
+// import { changeTodo, removeTodo } from "redux/todos/todosSlice";
+import { changeTodo } from "redux/todos/todosOperation";
 
 export const Task = ({ task }) => {
   const dispatch = useDispatch();
   
   const handleChange = () => {
-    dispatch(changeTodo(task.id));
-    console.log(task.id);
+  dispatch(changeTodo(
+    { ...task, completed: !task.completed }
+  ))
+      console.log({ ...task, completed: !task.completed })
+
   }
 
   const handleRemove = () => {
-    dispatch(removeTodo(task.id));
+    // dispatch(removeTodo(task.id));
   }
   
   return (
