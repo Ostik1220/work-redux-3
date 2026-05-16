@@ -31,3 +31,20 @@ export const changeTodo = createAsyncThunk(
         }
         }
 )
+
+export const addTodo = createAsyncThunk(
+    "todos/addTodo",
+    async(text, thunkAPI) => {
+        try {
+            const response = await axios.post("/posts", {
+                text,
+                completed: false,
+            });
+            const data = response.data;
+            console.log(data);
+            return data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.message);
+        }
+        }
+)
