@@ -48,3 +48,17 @@ export const addTodo = createAsyncThunk(
         }
         }
 )
+
+export const deleteTodo = createAsyncThunk(
+    "todos/deleteTodo",
+    async(id, thunkAPI) => {
+        try{
+            const response = await axios.delete(`/posts/${id}`)
+            const data = response.data
+            console.log(data)
+            return data
+        } catch (error){
+            return thunkAPI.rejectWithValue(error.message)
+        }
+    }
+)
