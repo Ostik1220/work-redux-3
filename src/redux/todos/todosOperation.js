@@ -62,3 +62,16 @@ export const deleteTodo = createAsyncThunk(
         }
     }
 )
+
+export const updateTodo = createAsyncThunk(
+    "todos/updateTodo",
+    async(updatedTask, thunkAPI) => {
+        try{
+            const response = await axios.put(`/posts/${updatedTask.id}`, updatedTask);
+            const data = response.data
+            return data
+        } catch (error){
+            return thunkAPI.rejectWithValue(error.message)
+        }
+    }
+)

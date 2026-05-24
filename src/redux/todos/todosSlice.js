@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
-import { fetchTodos, changeTodo, addTodo, deleteTodo } from "./todosOperation";
+import { fetchTodos, changeTodo, addTodo, deleteTodo, updateTodo } from "./todosOperation";
 
 // const initialState = [{ id: 1, completed: false, text: "qwe" }];
 
@@ -92,6 +92,22 @@ const todosSlice = createSlice({
     state.error = action.payload;
     state.loading = false;
         });
+          builder.addCase(updateTodo.rejected, (state, action) => {
+    state.error = action.payload;
+    state.loading = false;
+  });
+  builder.addCase(updateTodo.fulfilled, (state, action) => {
+    state.todos = state.todos.map((todo) => {
+      if (todo.id === action.payload.id) {
+        return action.payload;
+      }
+      return todo;
+    });
+    state.loading = false;
+  });
+  builder.addCase(updateTodo.pending, (state) => {
+        state.loading = true;
+  })
 }});
 
 // export const { addTodo, removeTodo, changeTodo } = todosSlice.actions;

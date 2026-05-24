@@ -37,3 +37,27 @@
   height: 24px;
   cursor: pointer;
 }
+
+.btnStop{
+  color: #ee0b0b;
+  background-color: transparent;
+  outline: none; 
+  border: none;
+  cursor: pointer;
+}
+
+.btnSubmit{
+  color: #4caf50;
+  background-color: transparent;
+  outline: none; 
+  border: none;
+  cursor: pointer;
+}
+
+.edit{
+  color: #2196f3;
+  background-color: transparent;
+  outline: none; 
+  border: none;
+  cursor: pointer;
+}
