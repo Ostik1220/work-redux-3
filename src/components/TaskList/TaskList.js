@@ -6,8 +6,7 @@ import { selectNeededTodos } from 'redux/filter/filterSelectors'
 
 export const TaskList = () => {
   const tasks = useSelector(selectNeededTodos);
-  
-  console.log(tasks);
+  console.log(tasks)
   return (
     <ul className={css.list}>
       {tasks.map(task => (

@@ -1,5 +1,6 @@
 import { createSelector } from "@reduxjs/toolkit";
-export const selectTodos = state => state.todos.todos;
+import { selectAll } from "./todosSlice";
+export const selectTodos = state => selectAll(state);
 export const selectCount = createSelector([selectTodos], (todos) => {
    return todos.reduce((acc, todo) => {
         if (todo.completed) {

@@ -2,13 +2,14 @@ import { MdClose, MdEdit  } from "react-icons/md";
 import { IoIosCloseCircle, IoMdCheckmark  } from "react-icons/io";
 
 import css from "./Task.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { changeTodo, removeTodo } from "redux/todos/todosSlice";
 import { changeTodo, deleteTodo, updateTodo } from "redux/todos/todosOperation";
 import { useState } from "react";
+import { selectById } from "redux/todos/todosSlice";
 
 
-export const Task = ({ task }) => {
+export const Task = ({task}) => {
   const dispatch = useDispatch();
   const [isClicked, setIsClicked] = useState(false)
   
@@ -54,7 +55,7 @@ dispatch(updateTodo({...task, text: e.target.elements.newTodo.value.trim()}))
   // const handleBlur = (e) =>{
   //   handleUpdate(e)
   // }
-  
+  console.log(task)
   return (
     <div className={css.wrapper}>
       <input
