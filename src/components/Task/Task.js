@@ -17,7 +17,7 @@ export const Task = ({task}) => {
   dispatch(changeTodo(
     { ...task, completed: !task.completed }
   ))
-      console.log({ ...task, completed: !task.completed })
+      // console.log({ ...task, completed: !task.completed })
 
   }
 
@@ -32,7 +32,7 @@ export const Task = ({task}) => {
 
   const handleUpdate = (e) => {
     e.preventDefault()
-    console.log(e.target.elements.newTodo.value.trim()) 
+    // console.log(e.target.elements.newTodo.value.trim()) 
     if (!e.target.elements.newTodo.value.trim()){setIsClicked(false); return} 
 dispatch(updateTodo({...task, text: e.target.elements.newTodo.value.trim()}))
         // console.log(task)
@@ -55,7 +55,7 @@ dispatch(updateTodo({...task, text: e.target.elements.newTodo.value.trim()}))
   // const handleBlur = (e) =>{
   //   handleUpdate(e)
   // }
-  console.log(task)
+  // console.log(task)
   return (
     <div className={css.wrapper}>
       <input

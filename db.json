@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "email": "ostap.drymalyk@gmail.com",
+      "password": "$2a$10$VCmbstbHP70BKimWKggr4.6fMoLcM0hcQ5l/4gzdz/SLQr8VXCPo2",
+      "id": 1
+    }
+  ],
+  "todos": []
+}
