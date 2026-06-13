@@ -1,6 +1,6 @@
 import { Button } from "components/Button/Button";
 import { useDispatch } from "react-redux";
-import { createUser } from "redux/users/usersOperations";
+import { createUser, loginUser } from "redux/users/usersOperations";
 
 export const AuthForm = () => {
 
@@ -11,7 +11,7 @@ e.preventDefault();
     const form = e.target;
     const email = form.email.value.trim();
     const password = form.password.value.trim();
-        dispatch(createUser({email, password}))
+        dispatch(loginUser({email, password}))
     console.log(email, password)
       form.reset();
     }

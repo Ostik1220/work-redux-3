@@ -16,3 +16,27 @@ export const createUser = createAsyncThunk(
     }
   }
 );
+
+export const loginUser = createAsyncThunk(
+  "users/loginUser",
+  async (obj, thunkAPI) => {
+    try {
+      const response = await axios.post("http://localhost:3001/login", {
+        email: obj.email,
+        password: obj.password,
+      });
+      const data = response.data;
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const logOutUser = createAsyncThunk(
+  "users/logOutUser",
+  async (obj, thunkAPI) => {
+    localStorage.removeItem("token")
+  }
+);

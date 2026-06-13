@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createUser } from "./usersOperations";
+import { createUser, loginUser } from "./usersOperations";
 
  const userSlice = createSlice({
     name: "user",
@@ -7,8 +7,10 @@ import { createUser } from "./usersOperations";
         token: "",
         user:{
             email: "",
-            id:""
-        }
+            id: null
+        },
+        error: null,
+        login: false
     },
 
   extraReducers: (builder) => {
@@ -16,6 +18,11 @@ import { createUser } from "./usersOperations";
       console.log(action)
       state.token = action.payload.accessToken
       state.user = action.payload.user
-    }); }})
+    }); 
+builder.addCase(loginUser.fulfilled, (state, action) => {
+      console.log(action)
+      state.token = action.payload.accessToken
+      state.user = action.payload.user
+    });}})
 
     export const userReducer = userSlice.reducer

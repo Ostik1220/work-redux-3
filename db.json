@@ -19,6 +19,16 @@
       "email": "ygeygeyg@gm.com",
       "password": "$2a$10$qeVLYwdrUFKU6xHK8A1.TegSipK3gPeyfkJNyHaxiDOg76u3yVCnm",
       "id": 4
+    },
+    {
+      "email": "we@gmail.com",
+      "password": "$2a$10$q.JuVXNV8XrYUrmQDuQQp.sVBhp4s4sH1Z4GMUT5ZR2W.IRfFgsbq",
+      "id": 5
+    },
+    {
+      "email": "kingki@ki.com",
+      "password": "$2a$10$Ji8UcuwJLcOAz2JANSWjMulv5E9TBNfTC43v5qVw6KgDH5ApsegpK",
+      "id": 6
     }
   ],
   "todos": []
