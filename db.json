@@ -4,6 +4,21 @@
       "email": "ostap.drymalyk@gmail.com",
       "password": "$2a$10$VCmbstbHP70BKimWKggr4.6fMoLcM0hcQ5l/4gzdz/SLQr8VXCPo2",
       "id": 1
+    },
+    {
+      "email": "qwer@gm.com",
+      "password": "$2a$10$vymNAU/jF0OwXTfA4PBUROtmYp0CtV2jlJ3rSvwXs4ZCxQf72ZFjS",
+      "id": 2
+    },
+    {
+      "email": "userAn@gmail.com",
+      "password": "$2a$10$t4XsE9gSsqqhIhBcX4rQ2ecR7GNS7DO4GfHUyYYpZ5D6iTFlXflVu",
+      "id": 3
+    },
+    {
+      "email": "ygeygeyg@gm.com",
+      "password": "$2a$10$qeVLYwdrUFKU6xHK8A1.TegSipK3gPeyfkJNyHaxiDOg76u3yVCnm",
+      "id": 4
     }
   ],
   "todos": []

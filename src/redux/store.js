@@ -1,22 +1,49 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { todosReducer } from "./todos/todosSlice";
 import { filterReducer } from "./filter/filterSlice";
+import { useReducer } from "react";
 import { combineReducers } from "redux";
+import storage from "redux-persist/es/storage";
 
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  persistReducer,
+  persistStore,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+} from "redux-persist";
+import { userReducer } from "./users/userSlice";
+
+const persistConfig = {
+  key:"token",
+  storage,
+  whitelist: ["token"]
+}
+
+const persistedReducer = persistReducer(persistConfig, userReducer);
 
 
 const rootReducer = combineReducers({
   todos: todosReducer,
-  filter: filterReducer
+  filter: filterReducer,
+  user: persistedReducer
 });
-
-// const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: rootReducer,
+   middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+
+      },
+    }),
 });
 
-// export let persistor = persistStore(store);
+export let persistor = persistStore(store);
 
 // const localStorData = localStorage.getItem("context")
 //   const [context, setContext] = useState(JSON.parse(localStorData) || [{ id: 1 }]);
