@@ -1,26 +1,19 @@
-import { AppBar } from "components/AppBar/AppBar";
-import { Layout } from "components/Layout/Layout";
-import { TaskForm } from "components/TaskForm/TaskForm";
-import { TaskList } from "components/TaskList/TaskList";
-import { useEffect } from "react";
-import { fetchTodos } from "redux/todos/todosOperation";
-import { useDispatch } from "react-redux";
-import { AuthForm } from "./AuthForm/AuthForm";
+import { ListPage } from "pages/ListPage";
+import { Layout } from "./Layout/Layout";
+import { AuthPage } from "pages/AuthPage";
+import { Route} from "react-router-dom";
+import { Routes } from "react-router";
+
 
 export const App = () => {
 
-const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchTodos());
-  }, []);
 
-  return (
-    <Layout>
-      <AppBar />
-      <AuthForm />
-      <TaskForm />
-      <TaskList />
-    </Layout>
-  );
-};
+  return (<>
+     <Routes>
+       <Route path="/" element={<AuthPage />} />
+       <Route path="/list" element={<ListPage />} />
+    </Routes>
+</>
+  )
+}

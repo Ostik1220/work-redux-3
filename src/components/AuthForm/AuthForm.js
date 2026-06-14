@@ -1,6 +1,6 @@
 import { Button } from "components/Button/Button";
 import { useDispatch } from "react-redux";
-import { createUser, loginUser } from "redux/users/usersOperations";
+import { createUser, loginUser, logOutUser } from "redux/users/usersOperations";
 
 export const AuthForm = () => {
 
@@ -29,6 +29,8 @@ e.preventDefault();
         placeholder="Enter password here"
       />
       <Button type="submit">Register</Button>
+      <Button type="button" onClick={() => {dispatch(logOutUser())}}>Log out</Button>
+
     </form>
     )
 } 

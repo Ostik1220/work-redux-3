@@ -27,6 +27,8 @@ export const loginUser = createAsyncThunk(
       });
       const data = response.data;
       console.log(data);
+      axios.defaults.headers.common.Authorization = `Bearer ${data.accessToken}`;
+                        console.log(thunkAPI.getState(), data)
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -37,6 +39,8 @@ export const loginUser = createAsyncThunk(
 export const logOutUser = createAsyncThunk(
   "users/logOutUser",
   async (obj, thunkAPI) => {
-    localStorage.removeItem("token")
+    console.log(thunkAPI.getState())
+    localStorage.removeItem("token");
+    axios.defaults.headers.common.Authorization = "";
   }
 );

@@ -20,7 +20,6 @@ import { userReducer } from "./users/userSlice";
 const persistConfig = {
   key:"token",
   storage,
-  whitelist: ["token"]
 }
 
 const persistedReducer = persistReducer(persistConfig, userReducer);
