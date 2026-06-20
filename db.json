@@ -24,7 +24,19 @@
       "email": "we@gmail.com",
       "password": "$2a$10$q.JuVXNV8XrYUrmQDuQQp.sVBhp4s4sH1Z4GMUT5ZR2W.IRfFgsbq",
       "id": 5
+    },
+    {
+      "email": "kingki@ki.com",
+      "password": "$2a$10$Sl1ntubWCyxKTmHx9RLjKeKRS1IC7kkTb6Ub3bL8YXA.cWxP.C86y",
+      "id": 6
     }
   ],
-  "todos": []
+  "todos": [
+    {
+      "text": "hello world",
+      "completed": false,
+      "userId": 6,
+      "id": 1
+    }
+  ]
 }

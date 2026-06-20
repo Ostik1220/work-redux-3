@@ -48,6 +48,7 @@ export const addTodo = createAsyncThunk(
             const response = await axios.post("/todos", {
                 text,
                 completed: false,
+                userId: thunkAPI.getState().user.user.id
             }, {
                 headers: getAuthHeader(thunkAPI.getState().user.token),
             });
@@ -68,8 +69,8 @@ export const deleteTodo = createAsyncThunk(
                 headers: getAuthHeader(thunkAPI.getState().user.token),
             });
             const data = response.data
-            console.log(data)
-            return data
+            console.log(response)
+            return id
         } catch (error){
             return thunkAPI.rejectWithValue(error.message)
         }

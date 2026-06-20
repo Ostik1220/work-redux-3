@@ -8,9 +8,9 @@ import { useDispatch } from "react-redux";
 export const ListPage = () => {
     const dispatch = useDispatch();
     
-    //   useEffect(() => {
-    //     dispatch(fetchTodos());
-    //   }, []);   
+      useEffect(() => {
+        dispatch(fetchTodos());
+      }, []);   
   return (
     <>
       <AppBar />
