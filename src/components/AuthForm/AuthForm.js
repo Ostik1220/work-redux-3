@@ -11,7 +11,7 @@ e.preventDefault();
     const form = e.target;
     const email = form.email.value.trim();
     const password = form.password.value.trim();
-        dispatch(loginUser({email, password}))
+        dispatch(createUser({email, password}))
     console.log(email, password)
       form.reset();
     }

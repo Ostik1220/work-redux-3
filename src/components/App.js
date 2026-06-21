@@ -16,9 +16,8 @@ console.log()
        {/* <PrivateRoute path="/list">
         <ListPage />
        </PrivateRoute> */}
-       {/* <Route path="/list" element={<PrivateRoute><ListPage /></PrivateRoute>} />
-        */}
-        <Route path="/list" element={<ListPage />} />
+       <Route path="/list" element={<PrivateRoute><ListPage /></PrivateRoute>} />
+        {/* <Route path="/list" element={<ListPage />} /> */}
     </Routes>
 </>
   )
