@@ -32,7 +32,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "server": "json-server db.json -m ./node_modules/json-server-auth -r routes.json --port 3001"
+    "server": "json-server db.json -m ./node_modules/json-server-auth -r routes.json --port 3001",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+
   },
   "browserslist": [
     ">0.2%",

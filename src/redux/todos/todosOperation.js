@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://my-json-server.typicode.com/Ostik1220/work-redux-3";
 
 const getAuthHeader = (token) => {
   return { Authorization: `Bearer ${token}` };
