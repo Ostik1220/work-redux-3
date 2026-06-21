@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://my-json-server.typicode.com/Ostik1220/work-redux-3";
+axios.defaults.baseURL = "http://localhost:3001/";
 
 const getAuthHeader = (token) => {
   return { Authorization: `Bearer ${token}` };
@@ -12,7 +12,7 @@ export const fetchTodos = createAsyncThunk(
     "todos/fetchTodos",
     async(_, thunkAPI) => {
         try {
-            const response = await axios.get("/todos", {
+            const response = await axios.get(`/todos?userId=${thunkAPI.getState().user.user.id}`, {
                 headers: getAuthHeader(thunkAPI.getState().user.token),
             });
             const data = response.data;

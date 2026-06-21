@@ -29,6 +29,16 @@
       "email": "kingki@ki.com",
       "password": "$2a$10$Sl1ntubWCyxKTmHx9RLjKeKRS1IC7kkTb6Ub3bL8YXA.cWxP.C86y",
       "id": 6
+    },
+    {
+      "email": "wewewe@we.com",
+      "password": "$2a$10$c8tXIuvHc1TOa9r7TIC7muXIKek8b./zzilrh.SFyvPjzwxKk5f5O",
+      "id": 7
+    },
+    {
+      "email": "rerere@re.com",
+      "password": "$2a$10$xycaDvj6KloJVYbwXDa/aOz39eim9lJBQIjX3/t8RYIV0ksyQd1Ym",
+      "id": 8
     }
   ],
   "todos": [
@@ -37,6 +47,30 @@
       "completed": false,
       "userId": 6,
       "id": 1
+    },
+    {
+      "text": "i love it",
+      "completed": false,
+      "userId": 6,
+      "id": 2
+    },
+    {
+      "text": "my name is wewe",
+      "completed": false,
+      "userId": 7,
+      "id": 3
+    },
+    {
+      "text": "my name is e\\rerer",
+      "completed": true,
+      "userId": 8,
+      "id": 4
+    },
+    {
+      "text": "hi",
+      "completed": false,
+      "userId": 8,
+      "id": 5
     }
   ]
 }

@@ -4,6 +4,8 @@ import { TaskForm } from "components/TaskForm/TaskForm";
 import { useEffect } from "react";
 import { fetchTodos } from "redux/todos/todosOperation";
 import { useDispatch } from "react-redux";
+import { Button } from "components/Button/Button";
+import { logOutUser } from "redux/users/usersOperations";
 
 export const ListPage = () => {
     const dispatch = useDispatch();
@@ -16,6 +18,8 @@ export const ListPage = () => {
       <AppBar />
       <TaskForm />
       <TaskList />
+            <Button type="button" onClick={() => {dispatch(logOutUser())}}>Log out</Button>
+      
     </>
   );
 };
